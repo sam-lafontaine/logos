@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Company Logos</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Company URL</th>
+				<th>Clearbit URL</th>
+				<th>Company Logo</th>
+			</tr>
+		</thead>
+		<tbody id="company-table">
+			<tr>
+				<td><input type="text" class="company-url"></td>
+				<td><span class="clearbit-url"></span></td>
+				<td><img class="company-logo" src=""></td>
+			</tr>
+		</tbody>
+	</table>
+
+  <br>
+	<button id="add-row">Add Row</button>
+	<button id="add-bulk">Add Bulk</button>
+  <button id="reload">Start Over</button>
+  <br>
+  <p class="disclaimer">Logos provided by <a href="https://clearbit.com">Clearbit</a></p>
