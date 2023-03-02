@@ -33,3 +33,10 @@ button{
 .company-logo {
     max-width: 64px;
 }
+@media (max-width: 600px) {
+    /* hide the third column on mobile */
+    table td:nth-child(2),
+    table th:nth-child(2) {
+      display: none;
+    }
+  }
