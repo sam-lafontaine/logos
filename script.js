@@ -16,7 +16,7 @@ $(function() {
     $("#add-row").click(function() {
       var newRow =
         '<tr>' +
-        '<td><input type="text" class="company-url"></td>' +
+        '<td><input type="text" class="company-url input is-small" style="width:auto"></td>' +
         '<td><span class="clearbit-url"></span></td>' +
         '<td><img class="company-logo" src=""></td>' +
         "</tr>";
@@ -33,7 +33,7 @@ $(function() {
       for (var i = 0; i < urlsArray.length; i++) {
         var newRow =
           '<tr>' +
-          '<td><input type="text" class="company-url" value="' +
+          '<td><input type="text" class="company-url input is-small" style="width:auto" value="' +
           urlsArray[i] +
           '"></td>' +
           '<td><span class="clearbit-url">' +
