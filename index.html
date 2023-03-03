@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LK7J7T45L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3LK7J7T45L');
-</script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LK7J7T45L"></script>
+	<script>
+  		window.dataLayer = window.dataLayer || [];
+  		function gtag(){dataLayer.push(arguments);}
+  		gtag('js', new Date());
+		gtag('config', 'G-3LK7J7T45L');
+	</script>
 	<title>Company Logos</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="icon" href="https://em-content.zobj.net/thumbs/240/apple/325/crystal-ball_1f52e.png">
+  	<script src="script.js"></script>
+  	<link rel="stylesheet" type="text/css" href="style.css" />
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  	<link rel="icon" href="https://em-content.zobj.net/thumbs/240/apple/325/crystal-ball_1f52e.png">
 </head>
 <body>
-
-	<table>
+	<div class="my-2 mx-2">
+	<table class="table is-fullwidth">
 		<thead>
 			<tr>
 				<th>Company URL</th>
-				<th>Clearbit URL</th>
+				<th class>Clearbit URL</th>
 				<th>Company Logo</th>
 			</tr>
 		</thead>
 		<tbody id="company-table">
 			<tr>
-				<td><input type="text" class="company-url" placeholder="e.g. apple.com"></td>
+				<td><input type="text" class="company-url input is-small" style="width:auto" placeholder="e.g. apple.com"></td>
 				<td><span class="clearbit-url"></span></td>
 				<td><img class="company-logo" src=""></td>
 			</tr>
@@ -36,8 +38,11 @@
 	</table>
 
   <br>
-	<button id="add-row">Add Row</button>
-	<button id="add-bulk">Add Bulk</button>
-  <button id="reload">Start Over</button>
-  <br>
+		<button class="button is-small mr-1" id="add-row">Add Row</button>
+		<button class="button is-small mr-1" id="add-bulk">Add Bulk</button>
+		<button class="button is-small mr-1" id="reload">Start Over</button>	
+
 	<p class="disclaimer">Built by <a href="https://twitter.com/samlafontaine_">Sam</a>. Logos provided by <a href="https://clearbit.com">Clearbit</a>.</p>
+</div>
+</body>
+</html>
