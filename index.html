@@ -16,6 +16,7 @@
   	<script src="script.js"></script>
   	<link rel="stylesheet" type="text/css" href="style.css" />
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   	<link rel="icon" href="https://em-content.zobj.net/thumbs/240/apple/325/crystal-ball_1f52e.png">
 </head>
 <body>
@@ -38,11 +39,28 @@
 	</table>
 
   <br>
-		<button class="button is-small mr-1" id="add-row">Add Row</button>
-		<button class="button is-small mr-1" id="add-bulk">Add Bulk</button>
-		<button class="button is-small mr-1" id="reload">Start Over</button>	
+		<button class="button is-small mr-1" id="add-row">
+			<span class="icon is-small">
+				<ion-icon name="add-circle-outline"></ion-icon>
+			</span>
+			<span>Add Row</span>
+		</button>
+		<button class="button is-small mr-1" id="add-bulk">
+			<span class="icon is-small">
+				<ion-icon name="reorder-four-outline"></ion-icon>
+			</span>
+			<span>Add Bulk</span>
+		</button>	
+		<button class="button is-small mr-1" id="reload">
+			<span class="icon is-small">
+				<ion-icon name="refresh-outline"></ion-icon>
+			</span>
+			<span>Start Over</span>
+		  </button>
 
 	<p class="disclaimer">Built by <a href="https://twitter.com/samlafontaine_">Sam</a>. Logos provided by <a href="https://clearbit.com">Clearbit</a>.</p>
 </div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
