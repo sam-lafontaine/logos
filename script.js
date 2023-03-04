@@ -8,18 +8,18 @@ $(function() {
       $(this).closest("tr").find(".clearbit-url").text(clearbitUrl);
       $(this).closest("tr").find(".company-logo").attr("src", companyLogoUrl);
     }
-  
+
     // Event listener to company URL input field
     $(".company-url").on("input", generateUrls);
   
     // Event listener to Add Row button
     $("#add-row").click(function() {
       var newRow =
-        '<tr>' +
-        '<td><input type="text" class="company-url input is-small" style="width:auto"></td>' +
-        '<td><span class="clearbit-url"></span></td>' +
-        '<td><img class="company-logo" src=""></td>' +
-        "</tr>";
+      '<tr>' +
+      '<td style="vertical-align: middle;"><input type="text" class="company-url input is-small" style="width:auto"></td>' +
+      '<td style="vertical-align: middle;"><span class="clearbit-url"></span></td>' +
+      '<td style="vertical-align: middle;"><img class="company-logo" src=""></td>' +
+      '</tr>';
   
       $("#company-table").append(newRow);
       $(".company-url").last().on("input", generateUrls);
@@ -33,14 +33,14 @@ $(function() {
       for (var i = 0; i < urlsArray.length; i++) {
         var newRow =
           '<tr>' +
-          '<td><input type="text" class="company-url input is-small" style="width:auto" value="' +
+          '<td style="vertical-align: middle;"><input type="text" class="company-url input is-small" style="width:auto" value="' +
           urlsArray[i] +
           '"></td>' +
-          '<td><span class="clearbit-url">' +
+          '<td style="vertical-align: middle;"><span class="clearbit-url">' +
           "https://logo.clearbit.com/" +
           urlsArray[i] +
           "</span></td>" +
-          '<td><img class="company-logo" src="' +
+          '<td style="vertical-align: middle;"><img class="company-logo" src="' +
           "https://logo.clearbit.com/" +
           urlsArray[i] +
           '"></td>' +
