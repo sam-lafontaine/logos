@@ -17,7 +17,6 @@ $(function() {
       var newRow =
       '<tr>' +
       '<td style="vertical-align: middle;"><input type="text" class="company-url input is-small" style="width:auto"></td>' +
-      '<td style="vertical-align: middle;"><span class="clearbit-url"></span></td>' +
       '<td style="vertical-align: middle;"><img class="company-logo" src=""></td>' +
       '</tr>';
   
@@ -36,10 +35,6 @@ $(function() {
           '<td style="vertical-align: middle;"><input type="text" class="company-url input is-small" style="width:auto" value="' +
           urlsArray[i] +
           '"></td>' +
-          '<td style="vertical-align: middle;"><span class="clearbit-url">' +
-          "https://logo.clearbit.com/" +
-          urlsArray[i] +
-          "</span></td>" +
           '<td style="vertical-align: middle;"><img class="company-logo" src="' +
           "https://logo.clearbit.com/" +
           urlsArray[i] +
@@ -57,4 +52,8 @@ $(function() {
     $("#reload").click(function reloadPage() {
         location.reload();
     });
+
+    // Event listener for image download
   });
+
+  
