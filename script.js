@@ -15,9 +15,9 @@ $(function() {
   $("#add-row").click(function() {
       var newRow =
       '<tr>' +
-      '<td style="vertical-align: middle;"><input type="text" class="company-url input is-small" style="width:auto"></td>' +
+      '<td style="vertical-align: middle;"><input type="text" class="company-url form-control" style="width:auto"></td>' +
       '<td style="vertical-align: middle;"><img class="company-logo" src=""></td>' +
-      '<td style="vertical-align: middle;"><button class="download button is-small">Download</button></td>' +
+      '<td style="vertical-align: middle;"><button class="download btn btn-outline-secondary btn-sm me-1">Download</button></td>' +
       '</tr>';
 
       $("#company-table").append(newRow);
@@ -31,14 +31,14 @@ $(function() {
       for (var i = 0; i < urlsArray.length; i++) {
           var newRow =
           '<tr>' +
-          '<td style="vertical-align: middle;"><input type="text" class="company-url input is-small" style="width:auto" value="' +
+          '<td style="vertical-align: middle;"><input type="text" class="company-url form-control" style="width:auto" value="' +
           urlsArray[i] +
           '"></td>' +
           '<td style="vertical-align: middle;"><img class="company-logo" src="' +
           "https://logo.clearbit.com/" +
           urlsArray[i] +
           '"></td>' +
-          '<td style="vertical-align: middle;"><button class="download button is-small">Download</button></td>' +
+          '<td style="vertical-align: middle;"><button class="download btn btn-outline-secondary btn-sm me-1">Download</button></td>' +
           "</tr>";
 
           $("#company-table").append(newRow);
