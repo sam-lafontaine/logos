@@ -7,27 +7,29 @@
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LK7J7T45L"></script>
 	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
-		gtag('config', 'G-3LK7J7T45L');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3LK7J7T45L');
 	</script>
 	<title>Company Logos - Search & Download 250,000+ Company Logos</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   	<script src="script.js"></script>
   	<link rel="stylesheet" type="text/css" href="style.css" />
-  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   	<link rel="icon" href="https://em-content.zobj.net/thumbs/240/apple/325/crystal-ball_1f52e.png">
 </head>
 <body>
-	<div class="container">
-	<div class="my-2 mx-2">
-		<div class="my-4 has-text-centered mt-6">
-			<h1 class="title is-1 mb-6">Free Company Logo Finder</h1>
-			<h2 class="subtitle is-5 mb-6">Find any company's logo and download it in 1 click. Just type the company's URL (no need for www or https) and see the logo appear.</h2>
+	<div class="d-flex justify-content-center mt-5">
+	<div class="main-wrapper">
+	<div>
+		<div class="text-center">
+			<h1 class="display-3 mb-3">Free Company Logo Finder</h1>
+			<p class="lead"><mark>Find any company's logo</mark> and download it in 1 click.</p>
 		</div>	
-	<table class="table is-fullwidth is-hoverable is-narrow mt-2">
+	<table class="table">
 		<thead>
 			<tr>
 				<th>Company URL</th>
@@ -37,36 +39,38 @@
 		</thead>
 		<tbody id="company-table">
 			<tr>
-				<td style="vertical-align: middle;"><input type="text" class="company-url input is-small" style="width:auto" placeholder="e.g. apple.com"></td>
+				<td style="vertical-align: middle;"><input type="text" class="company-url form-control" style="width:auto" placeholder="e.g. apple.com"></td>
 				<td style="vertical-align: middle;"><img class="company-logo" src="" crossorigin="anonymous"></td>
-                <td style="vertical-align: middle;"><button class="download button is-small">Download</button></td>
+                <td style="vertical-align: middle;"><button class="download btn btn-outline-secondary btn-sm me-1">Download</button></td>
 			</tr>
 		</tbody>
 	</table>
 
   	<br>
-		<button class="button is-small mr-1" id="add-row">
+		<button type="button" class="btn btn-outline-secondary btn-sm me-1" id="add-row">
 			<span class="icon is-small">
 				<ion-icon name="add-circle-outline"></ion-icon>
 			</span>
 			<span>Add Row</span>
 		</button>
-		<button class="button is-small mr-1" id="add-bulk">
+		<button type="button" class="btn btn-outline-secondary btn-sm me-1" id="add-bulk">
 			<span class="icon is-small">
 				<ion-icon name="reorder-four-outline"></ion-icon>
 			</span>
 			<span>Add Bulk</span>
 		</button>	
-		<button class="button is-small mr-1" id="reload">
+		<button type="button" class="btn btn-outline-secondary btn-sm me-1" id="reload">
 			<span class="icon is-small">
 				<ion-icon name="refresh-outline"></ion-icon>
 			</span>
 			<span>Start Over</span>
 		  </button>
-	<p class="disclaimer">Built by <a href="https://twitter.com/samlafontaine_">Sam</a>. Logos provided by <a href="https://clearbit.com">Clearbit</a>.</p>
+	<p class="disclaimer mt-2">Built by <a href="https://twitter.com/samlafontaine_">Sam</a>. Logos provided by <a href="https://clearbit.com">Clearbit</a>.</p>
 </div>
 </div>
+</div> 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+
