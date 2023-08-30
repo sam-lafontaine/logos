@@ -32,13 +32,13 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Company URL</th>
-				<th>Company Logo</th>
-                <th>Action</th>
+				<th scope="col">Company URL</th>
+				<th scope="col">Company Logo</th>
+                <th scope="col">Action</th>
 			</tr>
 		</thead>
 		<tbody id="company-table">
-			<tr>
+			<tr scope="row">
 				<td style="vertical-align: middle;"><input type="text" class="company-url form-control" style="width:auto" placeholder="e.g. apple.com"></td>
 				<td style="vertical-align: middle;"><img class="company-logo" src="" crossorigin="anonymous"></td>
                 <td style="vertical-align: middle;"><button class="download btn btn-outline-secondary btn-sm me-1">Download</button></td>
@@ -68,7 +68,8 @@
 	<p class="disclaimer mt-2">Built by <a href="https://twitter.com/samlafontaine_">Sam</a>. Logos provided by <a href="https://clearbit.com">Clearbit</a>.</p>
 </div>
 </div>
-</div> 
+</div>
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
