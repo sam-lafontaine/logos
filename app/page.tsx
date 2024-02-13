@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
   Table,
   TableBody,
@@ -23,12 +23,12 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-
 import { Input } from "@/components/ui/input"
-import { PlusIcon, BarsArrowUpIcon, ArrowPathIcon, ArrowDownOnSquareIcon } from "@heroicons/react/24/outline";
+import { PlusIcon, BarsArrowUpIcon, ArrowPathIcon, ArrowDownOnSquareIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 
 const CompanyLogoFinder = () => {
+  const urlsInputRef = useRef<HTMLInputElement>(null);
   const [companyUrls, setCompanyUrls] = useState<string[]>(['']);
 
   const generateUrls = (companyUrl: string) => {
@@ -50,6 +50,12 @@ const CompanyLogoFinder = () => {
     setCompanyUrls([...companyUrls, '']);
   };
 
+  const handleDeleteRow = (index: number) => {
+    const newCompanyUrls = [...companyUrls];
+    newCompanyUrls.splice(index, 1);
+    setCompanyUrls(newCompanyUrls);
+  };
+
   const handleBulkInput = () => {
     const urlsInputElement = document.getElementById('urls') as HTMLInputElement;
     if (urlsInputElement) {
@@ -60,6 +66,14 @@ const CompanyLogoFinder = () => {
       }
     }
   };
+
+  /*
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleBulkInput();
+    }
+  };
+  */
   
 
   const reloadPage = () => {
@@ -89,12 +103,13 @@ const CompanyLogoFinder = () => {
             <p className="text-md">Find <span className='text-orange-500 underline'>any company's logo</span> and download it in 1 click.</p>
           </div>
           <div className="flex items-center justify-center mt-6 w-full md:w-7/12">
-          <Table className="max-w-screen-lg">
+          <Table className="max-w-screen-lg table-auto">
             <TableHeader>
               <TableRow>
-                <TableHead className="">Company URL</TableHead>
-                <TableHead className="">Company Logo</TableHead>
-                <TableHead className="">Action</TableHead>
+                <TableHead>Company URL</TableHead>
+                <TableHead>Company Logo</TableHead>
+                <TableHead>Action</TableHead>
+                <TableHead></TableHead>
               </TableRow>
             </TableHeader>
 
@@ -119,7 +134,7 @@ const CompanyLogoFinder = () => {
                       crossOrigin="anonymous"
                     />
                   </TableCell>
-                  <TableCell style={{ verticalAlign: 'middle' }}>
+                  <TableCell>
                     <Button
                       variant="outline"
                       size="sm"
@@ -127,6 +142,16 @@ const CompanyLogoFinder = () => {
                     >
                       <ArrowDownOnSquareIcon className='w-4 h-4 mr-1'/>
                       Download
+                    </Button>
+                  </TableCell>
+                  <TableCell>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className='hover:bg-red-100'
+                      onClick={() => handleDeleteRow(index)}
+                    >
+                      <TrashIcon className='w-4 h-4 stroke-red-500'/>
                     </Button>
                   </TableCell>
                 </TableRow>
@@ -143,7 +168,6 @@ const CompanyLogoFinder = () => {
             <PlusIcon className="w-4 h-4"/>
             <span>Add Row</span>
           </Button>
-
           <AlertDialog>
             <AlertDialogTrigger asChild>
               <Button
@@ -161,15 +185,13 @@ const CompanyLogoFinder = () => {
                   Enter a comma-separated list of company URLs:
                 </AlertDialogDescription>
               </AlertDialogHeader>
-              <Input type="text" id="urls" />
+              <Input type="text" id="urls" ref={urlsInputRef} />
               <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
                 <AlertDialogAction onClick={handleBulkInput}>Submit</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
-
-
           <Button 
             className='gap-1'
             size="sm" 
