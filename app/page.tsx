@@ -12,6 +12,18 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+
 import { Input } from "@/components/ui/input"
 import { PlusIcon, BarsArrowUpIcon, ArrowPathIcon, ArrowDownOnSquareIcon } from "@heroicons/react/24/outline";
 
@@ -38,13 +50,17 @@ const CompanyLogoFinder = () => {
     setCompanyUrls([...companyUrls, '']);
   };
 
-  const addBulk = () => {
-    const urls = prompt("Enter a comma-separated list of company URLs:");
-    if (urls) {
-      const urlsArray = urls.split(/,\s*/);
-      setCompanyUrls([...companyUrls, ...urlsArray]);
+  const handleBulkInput = () => {
+    const urlsInputElement = document.getElementById('urls') as HTMLInputElement;
+    if (urlsInputElement) {
+      const urls = urlsInputElement.value;
+      if (urls) {
+        const urlsArray = urls.split(/,\s*/);
+        setCompanyUrls([...companyUrls, ...urlsArray]);
+      }
     }
   };
+  
 
   const reloadPage = () => {
     location.reload();
@@ -127,13 +143,33 @@ const CompanyLogoFinder = () => {
             <PlusIcon className="w-4 h-4"/>
             <span>Add Row</span>
           </Button>
-          <Button 
-            className='gap-1'
-            size="sm" 
-            onClick={addBulk}>
-            <BarsArrowUpIcon className="w-4 h-4"/>
-            <span>Add Bulk</span>
-          </Button>
+
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button
+                className='gap-1'
+                size="sm"
+              >
+              <BarsArrowUpIcon className="w-4 h-4"/>
+              <span>Add Bulk</span>
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Add bulk</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Enter a comma-separated list of company URLs:
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <Input type="text" id="urls" />
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction onClick={handleBulkInput}>Submit</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
+
           <Button 
             className='gap-1'
             size="sm" 
